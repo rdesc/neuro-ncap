@@ -12,8 +12,8 @@ for arg in ${@:3}; do
   fi
 done
 
-# loop over all remaining args and check if "--spoof-renderer or --spoof_renderer" is in  ${@:3}
-# if it is, set RENDERER_ARGS="--spoof-renderer" and remove it from the list of args
+# loop over all remaining args and check if "--spoof-model or --spoof_model" is in  ${@:3}
+# if it is, set RENDERER_ARGS="--spoof-model" and remove it from the list of args
 SHOULD_START_MODEL=true
 for arg in ${@:3}; do
   if [[ $arg == "--spoof-model" || $arg == "--spoof_model" ]]; then
@@ -62,6 +62,7 @@ if [ $SHOULD_START_MODEL == true ]; then
     --port $model_port \
     --config_path $MODEL_CFG_PATH \
     --checkpoint_path $MODEL_CHECKPOINT_PATH \
+    # --disable_col_optim \
     $MODEL_ARGS \
     &
 fi
