@@ -51,6 +51,7 @@ if [ $SHOULD_START_RENDERER == true ]; then
     &
 fi
 
+#  --disable_col_optim \
 if [ $SHOULD_START_MODEL == true ]; then
   echo "Running $MODEL_NAME service in background..."
   singularity exec --nv \
@@ -62,7 +63,7 @@ if [ $SHOULD_START_MODEL == true ]; then
     --port $model_port \
     --config_path $MODEL_CFG_PATH \
     --checkpoint_path $MODEL_CHECKPOINT_PATH \
-    $MODEL_ARGS \  #  --disable_col_optim \
+    $MODEL_ARGS \
     &
 fi
 
