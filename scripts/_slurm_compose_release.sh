@@ -62,8 +62,7 @@ if [ $SHOULD_START_MODEL == true ]; then
     --port $model_port \
     --config_path $MODEL_CFG_PATH \
     --checkpoint_path $MODEL_CHECKPOINT_PATH \
-    # --disable_col_optim \
-    $MODEL_ARGS \
+    $MODEL_ARGS \  #  --disable_col_optim \
     &
 fi
 
