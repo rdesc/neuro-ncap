@@ -1,20 +1,20 @@
-
 #################################################################
 # Edit the following paths to match your setup
 export BASE_DIR=$SCRATCH/'neuro_ncap_workspace'
 export NUSCENES_PATH=$SCRATCH/'nuscenes'
 # Model related stuff
-export MODEL_NAME='UniAD' # VAD example
+export MODEL_NAME='VAD' # VAD example
+export MODEL_ARGS='--disable_col_optim'
 
 export MODEL_FOLDER=$BASE_DIR/$MODEL_NAME
 
-# export MODEL_CHECKPOINT_PATH='checkpoints/VAD_base.pth' # VAD example
-# export MODEL_CFG_PATH='projects/configs/VAD/VAD_inference.py' # VAD example
-# export MODEL_CONTAINER=$MODEL_FOLDER/'vad.sif' # VAD example
+export MODEL_CHECKPOINT_PATH='checkpoints/VAD_base.pth' # VAD example
+export MODEL_CFG_PATH='projects/configs/VAD/VAD_inference.py' # VAD example
+export MODEL_CONTAINER=$MODEL_FOLDER/'vad.sif' # VAD example
 
-export MODEL_CHECKPOINT_PATH='checkpoints/uniad_base_e2e.pth' # UniAD example
-export MODEL_CFG_PATH='projects/configs/stage2_e2e/inference_e2e.py' # UniAD example
-export MODEL_CONTAINER=$MODEL_FOLDER/'uniad.sif' # UniAD example
+# export MODEL_CHECKPOINT_PATH='checkpoints/uniad_base_e2e.pth' # UniAD example
+# export MODEL_CFG_PATH='projects/configs/stage2_e2e/inference_e2e.py' # UniAD example
+# export MODEL_CONTAINER=$MODEL_FOLDER/'uniad.sif' # UniAD example
 
 # Rendering related stuff
 export RENDERING_FOLDER=$BASE_DIR/'neurad-studio'
@@ -25,7 +25,7 @@ export NCAP_FOLDER=$BASE_DIR/'neuro-ncap'
 export NCAP_CONTAINER=$NCAP_FOLDER/'neuro-ncap.sif'
 
 # Evaluation default values, set to lower for debugging
-export RUNS=50
+export RUNS=50  # they do 100 runs in the paper
 
 #################################################################
 
