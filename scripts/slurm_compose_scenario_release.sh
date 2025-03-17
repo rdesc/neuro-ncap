@@ -6,6 +6,7 @@
 #SBATCH --array=1-10
 #
 # This script is a wrapper around the _slurm_compose_release.sh script
+# NOTE: GPU needs to support compute capability 7.5 
 
 module load singularity
 module load python/3.10

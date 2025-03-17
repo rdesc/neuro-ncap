@@ -3,18 +3,22 @@
 export BASE_DIR=$SCRATCH/'neuro_ncap_workspace'
 export NUSCENES_PATH=$SCRATCH/'nuscenes'
 # Model related stuff
-export MODEL_NAME='VAD' # VAD example
+export MODEL_NAME='UniAD' # current options are 'UniAD', 'VAD'
 export MODEL_ARGS='--disable_col_optim'
 
 export MODEL_FOLDER=$BASE_DIR/$MODEL_NAME
 
-export MODEL_CHECKPOINT_PATH='checkpoints/VAD_base.pth' # VAD example
-export MODEL_CFG_PATH='projects/configs/VAD/VAD_inference.py' # VAD example
-export MODEL_CONTAINER=$MODEL_FOLDER/'vad.sif' # VAD example
+# select between UniAD and VAD
 
-# export MODEL_CHECKPOINT_PATH='checkpoints/uniad_base_e2e.pth' # UniAD example
-# export MODEL_CFG_PATH='projects/configs/stage2_e2e/inference_e2e.py' # UniAD example
-# export MODEL_CONTAINER=$MODEL_FOLDER/'uniad.sif' # UniAD example
+# UniAD example
+export MODEL_CHECKPOINT_PATH='checkpoints/uniad_base_e2e.pth'
+export MODEL_CFG_PATH='projects/configs/stage2_e2e/inference_e2e.py'
+export MODEL_CONTAINER=$MODEL_FOLDER/'uniad.sif'
+
+# VAD example (broken)
+# export MODEL_CHECKPOINT_PATH='checkpoints/VAD_base.pth'
+# export MODEL_CFG_PATH='projects/configs/VAD/VAD_inference.py'
+# export MODEL_CONTAINER=$MODEL_FOLDER/'vad.sif'
 
 # Rendering related stuff
 export RENDERING_FOLDER=$BASE_DIR/'neurad-studio'
