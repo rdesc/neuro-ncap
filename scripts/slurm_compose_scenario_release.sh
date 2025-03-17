@@ -15,7 +15,7 @@ scenario=${1:?"No scenario given"}
 # debugging flags:
 # --spoof-model
 # --spoof-renderer
-# --run_baseline_model
+# --run_baseline_model  # NOTE: cannot spoof the model and run the baseline model at the same time
 scripts/_slurm_compose_release.sh ncap_slurm_array_$scenario $scenario --scenario-category=$scenario ${@:2} 
 #
 #EOF
